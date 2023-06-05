@@ -1,0 +1,167 @@
+[
+    {
+        "name": "sonu",
+        "rollNo": 1,
+        "std": "11th",
+        "hindi": "90",
+        "marathi": "56",
+        "math": "87",
+        "sci": "86",
+        "history": "36",
+        "cs": "46"
+    },
+    {
+        "name": "monika",
+        "rollNo": 2,
+        "std": "11th",
+        "hindi": "78",
+        "marathi": "65",
+        "math": "36",
+        "sci": "34",
+        "history": "36",
+        "cs": "76"
+    },
+    {
+        "name": "rizwan",
+        "rollNo": 3,
+        "std": "10th",
+        "hindi": "90",
+        "marathi": "86",
+        "math": "56",
+        "sci": "35",
+        "history": "86",
+        "cs": "46"
+    },
+    {
+        "name": "mohit",
+        "rollNo": 4,
+        "std": "12th",
+        "hindi": "90",
+        "marathi": "65",
+        "math": "67",
+        "sci": "90",
+        "history": "36",
+        "cs": "76"
+    },
+    {
+        "name": "rani",
+        "rollNo": 5,
+        "std": "12th",
+        "hindi": "98",
+        "marathi": "86",
+        "math": "45",
+        "sci": "35",
+        "history": "88",
+        "cs": "34"
+    },
+    {
+        "name": "goli",
+        "rollNo": 6,
+        "std": "11th",
+        "hindi": "90",
+        "marathi": "76",
+        "math": "56",
+        "sci": "46",
+        "history": "76",
+        "cs": "77"
+    },
+    {
+        "name": "mahesh",
+        "rollNo": 7,
+        "std": "12th",
+        "hindi": "65",
+        "marathi": "34",
+        "math": "46",
+        "sci": "67",
+        "history": "57",
+        "cs": "46"
+    },
+    {
+        "name": "pratiksha",
+        "rollNo": 8,
+        "std": "12th",
+        "hindi": "98",
+        "marathi": "86",
+        "math": "55",
+        "sci": "45",
+        "history": "36",
+        "cs": "34"
+    },
+    {
+        "name": "renu",
+        "rollNo": 9,
+        "std": "10th",
+        "hindi": "57",
+        "marathi": "35",
+        "math": "24",
+        "sci": "57",
+        "history": "78",
+        "cs": "44"
+    },
+    {
+        "name": "mahi",
+        "rollNo": 10,
+        "std": "11th",
+        "hindi": "34",
+        "marathi": "45",
+        "math": "56",
+        "sci": "35",
+        "history": "56",
+        "cs": "67"
+    },
+    {
+        "name": "savi",
+        "rollNo": 11,
+        "std": "11th",
+        "hindi": "45",
+        "marathi": "35",
+        "math": "23",
+        "sci": "24",
+        "history": "46",
+        "cs": "46"
+    },
+    {
+        "name": "rahi",
+        "rollNo": 12,
+        "std": "11th",
+        "hindi": "34",
+        "marathi": "56",
+        "math": "67",
+        "sci": "56",
+        "history": "45",
+        "cs": "45"
+    },
+    {
+        "name": "snowy",
+        "rollNo": 13,
+        "std": "11th",
+        "hindi": "23",
+        "marathi": "56",
+        "math": "55",
+        "sci": "67",
+        "history": "78",
+        "cs": "67"
+    },
+    {
+        "name": "gayna",
+        "rollNo": 14,
+        "std": "11th",
+        "hindi": "90",
+        "marathi": "76",
+        "math": "55",
+        "sci": "86",
+        "history": "36",
+        "cs": "76"
+    },
+    {
+        "name": "sahil",
+        "rollNo": 15,
+        "std": "11th",
+        "hindi": "45",
+        "marathi": "23",
+        "math": "45",
+        "sci": "56",
+        "history": "66",
+        "cs": "45"
+    }
+]

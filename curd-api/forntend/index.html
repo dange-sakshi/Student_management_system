@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 5 table Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #000000;
+      }
+
+      #create-user {
+        background-color: brown;
+        float: right;
+        margin-top: 15px;
+      }
+
+      label,
+      input {
+        display: block;
+      }
+
+      input.text {
+        margin-bottom: 12px;
+        width: 95%;
+        padding: 0.4em;
+      }
+
+      fieldset {
+        padding: 0;
+        border: 0;
+        margin-top: 25px;
+      }
+
+      h1 {
+        font-size: 1.2em;
+        margin: 0.6em 0;
+      }
+
+      div#users-contain {
+        width: 350px;
+        margin: 20px 0;
+      }
+
+      div#users-contain table {
+        margin: 1em 0;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      div#users-contain table td,
+      div#users-contain table th {
+        border: 1px solid #eee;
+        padding: 0.6em 10px;
+        text-align: left;
+      }
+
+      .ui-dialog .ui-state-error {
+        padding: 0.3em;
+      }
+
+      .validateTips {
+        border: 1px solid transparent;
+        padding: 0.3em;
+      }
+      #std {
+        height: 35px;
+        width: 295px;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="no-more-tables data-table">
+          <button id="create-user">Add</button>
+          <table id="html-data-table" class="col-md-12 text-center cf mt-5">
+            <thead class="cf">
+              <tr class="ui-widget-header">
+                <th>Name</th>
+                <th>Roll.No</th>
+                <th>Std</th>
+                <th>Hindi</th>
+                <th>Marathi</th>
+                <th>Math</th>
+                <th>Sci</th>
+                <th>History</th>
+                <th>Cs</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tBody"></tbody>
+           
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="dialog-form" title="Student Form">
+      <form id="studentform">
+        <fieldset>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <span id="error"></span>
+          <label for="rollNo">Roll.No</label>
+          <input
+            type="text"
+            name="rollNo"
+            id="rollNo"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="std">Std</label>
+          <div class="custom-select">
+            <select
+              type="std"
+              name="std"
+              id="std"
+              class="text ui-widget-content ui-corner-all"
+            >
+              <option value=""></option>
+              <option value="9th">9th</option>
+              +
+
+              <option value="10th">10th</option>
+              <option value="11th">11th</option>
+              <option value="12th">12th</option>
+            </select>
+          </div>
+          <!-- <input type="std" name="std" id="std" class="text ui-widget-content ui-corner-all"> -->
+
+          <label for="hindi">Hindi</label>
+          <input
+            type="HIndi"
+            name="Hindi"
+            id="hindi"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="marathi">Marathi</label>
+          <input
+            type="marathi"
+            name="marathi"
+            id="marathi"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="math">Math</label>
+          <input
+            type="math"
+            name="math"
+            id="math"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="sci">Sci</label>
+          <input
+            type="sci"
+            name="sci"
+            id="sci"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="history">History</label>
+          <input
+            type="history"
+            name="history"
+            id="history"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="cs">Cs</label>
+          <input
+            type="cs"
+            name="cs"
+            id="cs"
+            class="text ui-widget-content ui-corner-all"
+          />
+        </fieldset>
+        <button id="submit" type="submit">Create new Student</button>
+        <button id="update" type="submit" class="submit">Update Student</button>
+      </form>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        getdata();
+      });
+      
+      function getdata() {
+        $.ajax({
+          url: "http://localhost:3000/backend/students/read.php",
+          type: "GET",
+         dataType: "json",
+          success: function (apiJsonData) {           
+            renderDataInTheTable(apiJsonData);
+          },
+          error: function (xhr, status, error) {
+            console.error(xhr);
+          },
+        });
+      }
+      function renderDataInTheTable(data) {
+        const mytable = $("#html-data-table");
+
+        if(data!=null){
+          
+            data.forEach((values) => {
+              let newRow = $("<tr>");
+             
+              Object.values(values).forEach((value) => {
+                let cell = $("<td>");
+                cell.text(value);
+                newRow.append(cell);
+              });
+              let cell4 = $("<td>");
+              cell4.html(
+                "<button class='btn btn-info btn-xs'id='edit' data-post_id=" +values.rollNo + 
+                "  >edit <button class='btn btn-warning btn-xs' id='delete' data-post_id=" + values.rollNo + ">delete"
+              );
+              newRow.append(cell4);
+              mytable.append(newRow);
+            });
+        }
+
+      }
+
+      $(function () {
+        var dialog,
+          form,
+          name = $("#name"),
+          rollNo = $("#rollNo"),
+          std = $("#std"),
+          hindi = $("#hindi"),
+          marathi = $("#marathi"),
+          math = $("#math"),
+          sci = $("#sci"),
+          history = $("#history"),
+          cs = $("#cs"),
+          allFields = $([])
+            .add(name)
+            .add(rollNo)
+            .add(std)
+            .add(hindi)
+            .add(marathi)
+            .add(math)
+            .add(sci)
+            .add(history)
+            .add(cs);
+
+        function addUser() {
+          var valid = true;
+          allFields.removeClass("ui-state-error");
+
+          
+        }
+      
+        addNewUser();
+
+        dialog = $("#dialog-form").dialog({
+          autoOpen: false,
+          height: 850,
+          width: 350,
+          modal: true,
+          buttons: {
+            // "Create a new Student": addUser,
+            Cancel: function () {
+              dialog.dialog("close");
+            },
+          },
+          close: function () {
+            // form[0].reset();
+            allFields.removeClass("ui-state-error");
+          },
+        });
+        dialog.find("form").on("submit", function (event) {
+          event.preventDefault();
+          addNewUser();
+          addUser();
+          // alert("Data Inserted Successfully.");
+          location.reload(true);
+          //  validatform();
+        });
+
+        $("#create-user")
+          .button()
+          .on("click", function () {
+            dialog.dialog("open");
+          });
+
+         
+      });
+
+  // postdata
+      function addNewUser() {
+        formData = {
+          name: $("#name").val(),
+          rollNo: $("#rollNo").val(),
+          std: $("#std").val(),
+          hindi: $("#hindi").val(),
+          marathi: $("#marathi").val(),
+          math: $("#math").val(),
+          sci: $("#sci").val(),
+          history: $("#history").val(),
+          cs: $("#cs").val(),
+        };
+
+        console.log(formData);
+
+        $.ajax({
+          url: "http://localhost:3000/backend/students/insert.php",
+          type: "POST",
+          data: JSON.stringify(formData),
+          dataType: "json",
+          // success: function (response) {},
+          success: function (response) {
+            alert(response);
+            // getdata();
+          },
+          error: function (xhr, status, error) {
+            console.error(xhr);
+          },
+        });
+      }
+// deletedata
+        $("tbody").on("click", "#delete", function () {
+          console.log("delete button clicked");
+          let rollNumber = $(this).attr("data-post_id");
+
+          $.ajax({
+            async: true,
+            url: "http://localhost:3000/backend/students/delete.php",
+            method: "DELETE",
+            data: rollNumber,
+
+            headers: {
+              accept: "application/json;odata=verbose",
+              "content-type": "application/json;odata=verbose",
+            },
+            success: function (data) {
+              console.log(data);
+
+              location.reload(true);
+
+            },
+            error: function (error) {
+              console.log(JSON.stringify(error));
+            },
+          });
+        });
+
+          
+// editdata
+
+       $("tbody").on("click", "#edit", function () {
+         updateuser();
+          console.log("edit button clicked");
+          let rollNumber = $(this).attr("data-post_id");
+          
+          console.log("rollNumber::"+ rollNumber);
+          $.ajax({
+
+            async: true,
+            url: "http://localhost:3000/backend/students/readOne.php",
+            method: "GET",
+            data: {rollNumber:rollNumber},
+            dataType: "json",
+            headers: {
+              accept: "application/json;odata=verbose",
+              "content-type": "application/json;odata=verbose",
+            },
+            success: function (data) {
+              console.log(data);
+               $('#name').val(data.data.name);
+               $('#rollNo').val(data.data.rollNo);
+               $('#std').val(data.data.std);
+               $('#hindi').val(data.data.hindi);
+               $('#marathi').val(data.data.marathi);
+               $('#math').val(data.data.math);
+               $('#sci').val(data.data.sci);
+               $('#history').val(data.data.history);
+               $('#cs').val(data.data.cs);
+              
+
+            },
+            error: function (error) {
+              console.log(JSON.stringify(error));
+            },
+          });
+        });
+// updatedata
+  function updateNewUser() {
+    formData = {
+      name: $("#name").val(),
+      rollNo: $("#rollNo").val(),
+      std: $("#std").val(),
+      hindi: $("#hindi").val(),
+      marathi: $("#marathi").val(),
+      math: $("#math").val(),
+      sci: $("#sci").val(),
+      history: $("#history").val(),
+      cs: $("#cs").val(),
+    };
+
+    console.log(formData);
+
+    $.ajax({
+      url: "http://localhost:3000/backend/students/update.php",
+      type: "PUT",
+      data: JSON.stringify(formData),
+      dataType: "json",
+      success: function (response) { },
+      error: function (xhr, status, error) {
+        console.error(xhr);
+      },
+    });
+  }
+
+
+// updateuser
+
+        function updateuser() {
+          var dialog,
+            form,
+            name = $("#name"),
+            rollNo = $("#rollNo"),
+            std = $("#std"),
+            hindi = $("#hindi"),
+            marathi = $("#marathi"),
+            math = $("#math"),
+            sci = $("#sci"),
+            history = $("#history"),
+            cs = $("#cs"),
+            allFields = $([])
+              .add(name)
+              .add(rollNo)
+              .add(std)
+              .add(hindi)
+              .add(marathi)
+              .add(math)
+              .add(sci)
+              .add(history)
+              .add(cs);
+
+          function addUser() {
+            var valid = true;
+            allFields.removeClass("ui-state-error");
+
+
+          }
+          // updateNewUser();
+
+          dialog = $("#dialog-form").dialog({
+            autoOpen: false,
+            height: 850,
+            width: 350,
+            modal: true,
+            buttons: {
+              // "Create a new Student": addUser,
+              Cancel: function () {
+                dialog.dialog("close");
+              },
+            },
+            close: function () {
+              // form[0].reset();
+              allFields.removeClass("ui-state-error");
+            },
+          });
+          dialog.find("form").on("submit", function (event) {
+            event.preventDefault();
+            updateNewUser();
+            addUser();
+            alert("Data Updated Successfully.");
+            location.reload(true);
+            //  validatform();
+          });
+          $("#update")
+            .button()
+            .on("click", function (event) {
+              event.preventDefault();
+              updateNewUser();
+              addUser();
+              alert("Data Updated Successfully.");
+              location.reload(true);
+            });
+          
+              dialog.dialog("open");
+          
+
+
+        };
+  
+ </script>
+  </body>
+</html>

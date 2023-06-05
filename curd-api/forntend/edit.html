@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script src="https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/jquery-1.12.4.js"></script>
+    <script
+        src="https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/jquery.dataTables.min.js"></script>
+    <script
+        src="https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/dataTables.bootstrap.min.js"></script>
+    <script src="https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://sharepointtechie.sharepoint.com/sites/auto/SiteAssets/CRUD/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"
+        type="text/javascript"></script>
+    <script src="https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/Script.js"></script>
+    <link rel="stylesheet" href="https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/Style.css"
+        type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="row4" class="row nopadding ">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-horizontal padLeftRight">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pleft0 pright0">
+                    <div class="announcment paddingwebpart " style="background:white;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pleft0 pright0">
+                            <h5 id="BtnAlign"> <a class="addbtn" target="_blank"
+                                    style="color:white; text-decoration:none" data-target="#ModalForNewProject"
+                                    data-toggle="modal">New Employee</a> </h5> <br>
+                        </div>
+                        <table id="subsiteList" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th> Name</th>
+                                    <th>rollNo</th>
+                                    <th>std</th>
+                                    <th>class</th>
+                                    <th>hindi</th>
+                                    <th>marathi</th>
+                                    <th>math</th>
+                                    <th>sci</th>
+                                    <th>history</th>
+                                    <th>cs</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ModalForNewProject" role="dialog" title="Create new Project">
+            <div class="modal-dialog">
+                <fieldset>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cls-contriute">
+                        <h5 class="contributtitle">Add Student Information</h5>
+                    </div>
+                </fieldset>
+                <div id="ModelBody">
+                    <div class="form-horizontal well bs-component cls-divthoug" id="ModalValidation">
+                        <fieldset id="bodymodal">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">Name
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtempname" /> <span class="ErMsg" id="ProNmMsg">Please fill out
+                                        this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">rollNo
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtdesignation" /> <span class="ErMsg" id="ProNmMsg">Please fill
+                                        out this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">class
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtemail" /> <span class="ErMsg" id="ProNmMsg">Please fill out
+                                        this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">hindi
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtmobile" /> <span class="ErMsg" id="ProNmMsg">Please fill out
+                                        this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">marathi
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtbloodgrp" /> <span class="ErMsg" id="ProNmMsg">Please fill
+                                        out this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">math
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtaddress" /> <span class="ErMsg" id="ProNmMsg">Please fill out
+                                        this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">sci
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control"
+                                        type="text" id="txtemergency" /> <span class="ErMsg" id="ProNmMsg">Please fill
+                                        out this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">history
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text" id="txtemergency" /> <span
+                                        class="ErMsg" id="ProNmMsg">Please fill
+                                        out this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                    class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">cs
+                                    <span class="red">*</span>
+                                </label>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text" id="txtemergency" /> <span
+                                        class="ErMsg" id="ProNmMsg">Please fill
+                                        out this field!</span> </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                <div class="col-lg-offset-7 col-lg-2 cls-divbtn "> <input class="cls-savecancel"
+                                        id="btnsave" type="button" onclick="createListItem();" value="Submit" /> </div>
+                                <div class="col-lg-2 col-lg-offset-1"> <input class="cls-savecancel" type="reset"
+                                        value="Cancel" id="btnCancel" data-dismiss="modal" /> </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group cls-sucees"
+                        style="background-color:#edeff2">
+                        <div id="successMessage"></div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group LoadingDiv" id="loader"
+                    style="display:none;padding: 66px;background-color: #0a2f7d!important;">
+                    <div class="loader">Loading...</div>
+                    <div class="loader1">
+                        <p class="ones"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- update modal -->
+    <div class="modal fade" id="ModalForUpdateEmployee" role="dialog" title="Update New Employee">
+        <div class="modal-dialog">
+            <fieldset>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cls-contriute">
+                    <h5 class="contributtitle">Update Employee Information</h5>
+                </div>
+            </fieldset>
+            <div id="ModelBody">
+                <div class="form-horizontal well bs-component cls-divthoug" id="ModalValidation">
+                    <fieldset id="bodymodal">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought"> Name
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="name" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">rollNo
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="rollNo" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">class
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="class" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">hindi
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="hindi" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">marathi
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="marathi" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">math
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="math" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">sci
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text"
+                                    id="sci" /> <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">history
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text" id="history" />
+                                <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group"> <label
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-4 cls-thought">cs
+                                <span class="red">*</span>
+                            </label>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> <input class="form-control" type="text" id="cs" />
+                                <span class="ErMsg" id="ProNmMsg">Please fill out this
+                                    field!</span> </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                            <div class="col-lg-offset-7 col-lg-2 cls-divbtn "> <input class="cls-savecancel"
+                                    id="btnsave" type="button" onclick="update(uId);" value="Submit" /> </div>
+                            <div class="col-lg-2 col-lg-offset-1"> <input class="cls-savecancel" type="reset"
+                                    value="Cancel" id="btnCancel" data-dismiss="modal" /> </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group cls-sucees"
+                    style="background-color:#edeff2">
+                    <div id="successMessage"></div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group LoadingDiv" id="loader"
+                style="display:none;padding: 66px;background-color: #0a2f7d!important;">
+                <div class="loader">Loading...</div>
+                <div class="loader1">
+                    <p class="ones"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--end-->
+    <script>
+        $(document).ready(function () {
+
+                getItems();
+
+            });
+
+
+
+            function createListItem() {
+                var ename = $('#name').val();
+                var erollNo = $('#rollNo').val();
+                var eclass = $('#class').val();
+                var ehindi = $('#hindi').val();
+                var emarathi = $('#marathi').val();
+                var emath = $('#math').val();
+                var esci = $('#sci').val();
+                 var ehistory = $('#history').val();
+                  var ecs = $('#cs').val();
+
+                $.ajax({
+
+                    async: true,
+                    url: 'http://localhost:3000/curd-api/backend/students/insert.php',
+                    method: "POST",
+                    data: JSON.stringify({
+                        '__metadata': {
+                            'type': 'SP.Data.EmployeeListItem'
+                        },
+                        'name': ename,
+                        'rollNo': erollNo,
+                        'class': eclass,
+                        'hindi': ehindi,
+                        'marathi': marathi,
+                        'math': emath,
+                        'sci': esci,
+                         'history': ehistory,
+                          'cs': cs
+                    }),
+                    headers: {
+                        "accept": "application/json;odata=verbose",
+                        "content-type": "application/json;odata=verbose",
+                        "X-RequestDigest": $("#__REQUESTDIGEST").val()
+                    },
+                    success: function (data) {
+
+                        var ename = $('#name').val("");
+                        var erollNo = $('#rollNo').val("");
+                        var eclass = $('#class').val("");
+                        var ehindi = $('#hindi').val("");
+                        var emarathi = $('#marathi').val("");
+                        var emath = $('#math').val("");
+                        var esci = $('#sci').val("");
+                        var ehistory = $('#history').val("");
+                        var ecs = $('#cs').val("");
+
+                        swal("Item created successfully", "success");
+
+                        if ($.fn.DataTable.isDataTable('#subsiteList')) {
+                            $('#subsiteList').DataTable().destroy();
+                        }
+                        $('#subsiteList tbody').empty();
+
+
+                        getItems();
+                    },
+                    error: function (error) {
+                        console.log(JSON.stringify(error));
+
+                    }
+
+                })
+
+            }
+
+
+            function getItems() {
+
+                $.ajax({
+
+                    async: true,
+                    url:  _spPageContextInfo.webAbsoluteUrl + "http://localhost:3000/curd-api/backend/read.php('marks')/items",
+                    method: "GET",
+                  
+                    headers: {
+                        "accept": "application/json;odata=verbose",
+                        "content-type": "application/json;odata=verbose"
+
+                    },
+                    success: function (data) {
+                        data = data.d.results;
+                        console.log(data);
+                        $.each(data, function (index, value) {
+
+                            var html = "<tr><td>" + value.name + "</td><td>" + value.rollNo + "</td><td>" + value.class + "</td><td>" + value.hindi + 
+                                "</td><td>" + value.marathi + "</td><td>" + value.math + "</td><td>" + value.sci + "</td><td>" + value.history + "</td><td>" +
+                                   "</td><td>" + value.cs + "</td><td>" +  "</td><td><a href='#' data-target='#ModalForUpdatemarks' data-toggle='modal' onclick='edit(" + value.Id + ")'><img src='https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/003-edit-document.png'></a></td><td><a href='#' onclick='deleteItem(" + value.Id + ");'><img src='https://sharepointtechie.sharepoint.com/sites/automatedwiki/SiteAssets/CRUD/001-delete.png'></a></td></tr>";
+                            $('.table tbody').append(html);
+
+                        });
+
+                        table = $('#subsiteList').DataTable();
+                    },
+                    error: function (error) {
+                        console.log(JSON.stringify(error));
+
+                    }
+
+                })
+
+
+            }
+
+            // function edit(value) {
+
+            //     $.ajax({
+
+            //         async: true,
+            //         url: _spPageContextInfo.webAbsoluteUrl + 'http://localhost:3000/curd-api/backend/read.php', 
+            //         method: "GET",
+
+            //         headers: {
+            //             "accept": "application/json;odata=verbose",
+            //             "content-type": "application/json;odata=verbose"
+
+            //         },
+            //         success: function (data) {
+            //             console.log(data.d.EmployeeName);
+            //             ename = $('#name').val(data.d.name);
+            //             erollNo = $('#rollNo').val(data.d.rollNo);
+            //             eclass = $('#class').val(data.d.class);
+            //             ehindi = $('#marathi').val(data.d.hindi);
+            //             emarathi = $('#marathi').val(data.d.marathi);
+            //             emath = $('#math').val(data.d.math);
+            //             esci = $('#sci').val(data.d.sci);
+            //             ehistory = $('#history').val(data.d.history);
+            //              ehistory = $('#history').val(data.d.history);
+            //            ecs = $('#history').val(data.d.cs);
+
+
+
+
+            //         },
+            //         error: function (error) {
+            //             console.log(JSON.stringify(error));
+
+            //         }
+
+
+            //     })
+
+            //     uId = value;
+            // }
+
+
+
+
+            // function update(uId) {
+            //     var ename = $('#name').val();
+            //     var erollNo = $('#rollNo').val();
+            //     var eclass = $('#class').val();
+            //     var ehindi = $('#hindi').val();
+            //     var emarathi = $('#marathi').val();
+            //     var emath = $('#math').val();
+            //     var esci = $('#sci').val();
+            //     var ehistory = $('#history').val();
+            //     var ecs = $('#cs').val();
+
+                
+
+            //     $.ajax({
+
+
+            //         url: _spPageContextInfo.webAbsoluteUrl + "'http://localhost:3000/curd-api/backend/insert.php(" + uId + ")'",
+            //         method: "POST",
+            //         data: JSON.stringify({
+            //             '__metadata': {
+            //                 'type': 'SP.Data.EmployeeListItem'
+            //             },
+            //             'name': ename,
+            //             'rollNo': erollNo,
+            //             'class': eclass,
+            //             'hindi': ehindi,
+            //             'marathi': emarathi,
+            //             'math': emath,
+            //             'history': ehistory
+            //         }),
+            //         headers: {
+            //             "accept": "application/json;odata=verbose",
+            //             "content-type": "application/json;odata=verbose",
+            //             "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            //             "IF-MATCH": "*",
+            //             "X-HTTP-Method": "MERGE"
+            //         },
+            //         success: function (data) {
+            //             swal("Item Updated successfully", "success");
+
+            //             if ($.fn.DataTable.isDataTable('#subsiteList')) {
+            //                 $('#subsiteList').DataTable().destroy();
+            //             }
+            //             $('#subsiteList tbody').empty();
+
+
+            //             getItems();
+            //         },
+            //         error: function (error) {
+            //             console.log(JSON.stringify(error));
+
+            //         }
+
+            //     })
+
+
+            // }
+
+
+
+            // function deleteItem(value) {
+
+            //     $.ajax({
+
+
+            //         url: _spPageContextInfo.webAbsoluteUrl + 'http://localhost:3000/curd-api/backend/insert.php (" + value + ")"',
+            //         method: "POST",
+            //         headers: {
+            //             "accept": "application/json;odata=verbose",
+            //             "content-type": "application/json;odata=verbose",
+            //             "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            //             "IF-MATCH": "*",
+            //             "X-HTTP-Method": "DELETE"
+            //         },
+            //         success: function (data) {
+
+            //             swal("Deleted!", "Item Deleted successfully", "success");
+
+            //             if ($.fn.DataTable.isDataTable('#subsiteList')) {
+            //                 $('#subsiteList').DataTable().destroy();
+            //             }
+            //             $('#subsiteList tbody').empty();
+
+
+            //             getItems();
+            //         },
+            //         error: function (error) {
+            //             console.log(JSON.stringify(error));
+
+            //         }
+
+            //     })
+
+
+            // }  
+    </script>
+</body>
+
+</html>
